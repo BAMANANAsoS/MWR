@@ -1,0 +1,227 @@
+/* 기본 배경 및 스크롤 설정 */
+html {
+    /* 부드러운 스크롤을 끄고 즉시 이동하게 설정 */
+    scroll-behavior: auto; 
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 네비게이션: 상단에 위치하며 스크롤 시 위로 올라가 가려짐 */
+.monster-nav {
+    width: 100%;
+    background: #1a1a1a;
+    border-bottom: 2px solid #443e30;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.nav-title {
+    font-size: 0.8rem;
+    color: #8b7355;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    gap: 15px; /* 항목 간 간격 */
+}
+
+.nav-list li {
+    width: 100px; /* 모든 네비 항목의 너비를 고정 */
+}
+
+.nav-list li a {
+    display: flex;
+    flex-direction: column; /* 아이콘이 위, 이름이 아래 */
+    align-items: center;
+    text-decoration: none;
+    background: #252525;
+    border: 1px solid #443e30;
+    padding: 10px 5px;
+    border-radius: 4px;
+    transition: all 0.1s;
+    height: 85%; /* 높이 통일 */
+}
+
+/* 아이콘 박스 */
+.nav-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-icon img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+/* 몬스터 이름 */
+.nav-name {
+    font-size: 0.75rem;
+    color: #bbb;
+    text-align: center;
+    width: 100%;
+    /* 이름이 너무 길 경우 처리 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+/* 호버 효과: 몬헌 선택창 느낌 */
+.nav-list li a:hover {
+    background: #3d3529;
+    border-color: #c9a97c;
+    transform: scale(1.05); /* 살짝 커지는 효과 */
+}
+
+.nav-list li a:hover .nav-name {
+    color: #f2e6d9;
+}
+
+.nav-list li a:hover .nav-icon {
+    border-color: #c9a97c;
+}
+
+/* 갤러리 컨테이너: 한 줄에 하나씩 */
+.gallery-container {
+    width: 100%;
+    max-width: 1400px; /* 카드의 최대 너비를 크게 설정 */
+    padding: 40px 20px;
+}
+
+/* 몬스터 카드: 한 줄에 하나씩 꽉 차게 */
+.monster-card {
+    background: #1f1f1f;
+    border: 1px solid #332d24;
+    margin-bottom: 80px; /* 카드 사이 간격 크게 */
+    padding: 30px;
+    text-align: center;
+    position: relative;
+}
+
+/* 인게임 배경 프레임 - 크게 확장 */
+.ingame-frame img {
+    width: auto;
+    height: 750px; /* 크게 보기 위해 높이 증가 */
+    object-fit: cover;
+    border: 1px solid #443e30;
+}
+
+.monster-alias {
+    font-size: 1.2rem;
+    color: #e2cfba; /* 좀 더 선명한 고대 금색 */
+    margin: 25px 0 0;
+    letter-spacing: 0.3em; /* 자간을 넓게 해서 위엄 있게 표현 */
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 
+                 0 0 10px rgba(139, 115, 85, 0.3); /* 은은한 발광 효과 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* 왼쪽 장식 */
+.monster-alias::before {
+    content: "『"; /* 몬헌에서 자주 쓰는 괄호 스타일 */
+    font-size: 1.4rem;
+    color: #5d4d37;
+    margin-right: -5px;
+}
+
+/* 오른쪽 장식 */
+.monster-alias::after {
+    content: "』";
+    font-size: 1.4rem;
+    color: #5d4d37;
+    margin-left: -5px;
+}
+
+/* PNG 이미지 프레임 - 크게 확장 */
+.png-frame {
+    height: 630px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.png-frame img {
+    max-width: 100%;
+    max-height: 100%;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.9));
+}
+
+/* 하단 이름 정보 */
+.monster-info {
+    border-top: 2px solid #332d24;
+    padding-top: 20px;
+}
+
+.species-line {
+    display: flex;
+    flex-direction: column; /* 세로로 쌓이게 변경 */
+    align-items: center;    /* 중앙 정렬 */
+    gap: 2px;               /* 두 줄 사이의 간격 */
+}
+
+.species-name {
+    font-size: 1.5rem;      /* 종명 크기 */
+    color: #aaa;            /* 살짝 밝은 회색 */
+    font-weight: 500;
+}
+
+.kanji-name {
+    font-size: 1.0rem;     /* 더 작게 설정 */
+    color: #333;            /* 배경색과 거의 비슷하게 해서 눈에 띄지 않게 */
+    letter-spacing: 1px;    /* 한자 자간을 살짝 벌려 고급스럽게 */
+    margin-bottom: 0px;     /* 메인 이름과의 간격 */
+}
+
+.main-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #f2e6d9;
+    margin-top: 0;          /* 위쪽 간격 초기화 */
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 80px auto;
+    width: 80%; /* 선의 길이 */
+    height: 1px;
+    /* 중앙은 보이고 양끝은 투명해지는 그라데이션 선 */
+    background: linear-gradient(to right, transparent, #443e30, #8b7355, #443e30, transparent);
+    position: relative;
+}
+
+/* 선 중앙에 작은 점이나 다이아몬드 포인트 */
+.divider-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #8b7355;
+    transform: rotate(45deg); /* 다이아몬드 모양 */
+    border: 1px solid #1f1f1f;
+    position: absolute;
+}
