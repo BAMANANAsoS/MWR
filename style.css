@@ -177,6 +177,10 @@ body {
     padding-top: 20px;
 }
 
+.dename {font-size: 1.0rem;
+    color: #666666;
+}
+
 .species-line {
     display: flex;
     flex-direction: column; /* 세로로 쌓이게 변경 */
@@ -224,4 +228,120 @@ body {
     transform: rotate(45deg); /* 다이아몬드 모양 */
     border: 1px solid #1f1f1f;
     position: absolute;
+}
+
+
+.special-section {
+    width: 100%;
+    margin: 100px 0 60px;
+    text-align: center;
+}
+
+.section-divider {
+    height: 2px;
+    background: linear-gradient(to right, transparent, #ff4500, #ff8c00, #ff4500, transparent);
+    margin: 15px 0;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #ff8c00; /* 강렬한 주황/빨강 */
+    letter-spacing: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.section-desc {
+    color: #f9ce9a;
+    font-size: 1rem;
+    margin-top: 10px;
+    letter-spacing: 8px;
+}
+
+/* 주인 몬스터 카드 전용 스타일 (변이된 느낌) */
+.monster-card.apex {
+    border: 2px solid #4a1f0e; /* 붉은색 테두리 */
+    box-shadow: 0 0 40px rgba(255, 140, 0, 0.1); /* 붉은 광채 */
+}
+
+.monster-card.apex .monster-alias {
+    color: #ff8c00; /* 이명 색상을 붉게 */
+}
+
+.monster-card.apex .divider {
+    background: linear-gradient(to right, transparent, #ff4500, #ffd700, #ff4500, transparent);
+}
+
+.monster-card.apex .divider-dot {
+    background-color: #ffd700;
+}
+
+.monster-card.apex .main-name {
+    text-shadow: 0 0 15px rgba(255, 82, 0, 0.6);
+}
+
+
+
+/* 주인 섹션 헤더 스타일 */
+.special-section.risen {
+    margin: 120px auto 80px;
+}
+
+.special-section.risen .section-divider {
+    /* 바랜 금색에서 짙은 갈색으로 이어지는 그라데이션 */
+    background: linear-gradient(to right, transparent, #5d4d37, #a68b5b, #5d4d37, transparent);
+}
+
+.special-section.risen .section-title {
+    color: #a68b5b; /* 바랜 금색 */
+}
+
+.special-section.risen .kanji-title {
+    background: #3d3529; /* 짙은 고목색 */
+    color: #a68b5b;
+    border: 1px solid #5d4d37;
+}
+
+.special-section.risen .section-desc {
+    color: #665c4d; /* 먼지 쌓인 듯한 갈색 */
+}
+
+
+.monster-card.risen {
+    
+    /* 2. 테두리: 산화된 금속 느낌의 황동색 */
+    border: 2px solid #5d4d37;
+    
+    /* 3. 외곽 광채: 어둡고 묵직한 그림자 효과 */
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(93, 77, 55, 0.2);
+}
+
+/* 괴이극복 카드 내의 이명 (Title) */
+.monster-card.risen .monster-alias {
+    color: #a68b5b; /* 황동색 */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* 괴이극복 카드 내의 구분선 */
+.monster-card.risen .divider {
+    background: linear-gradient(to right, transparent, #5d4d37, #8b7355, #5d4d37, transparent);
+}
+
+.monster-card.risen .divider-dot {
+    background-color: #3d3529;
+    border: 1px solid #8b7355;
+    box-shadow: none; /* 발광 억제 */
+}
+
+/* 괴이극복 카드 내의 이름 섹션 */
+.monster-card.risen .main-name {
+    color: #d9c5a3; /* 바랜 미색/금색 */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+.monster-card.risen .species-name {
+    color: #7a6e5a;
 }
